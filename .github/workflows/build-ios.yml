@@ -97,8 +97,8 @@ jobs:
           [[ "$(/usr/libexec/PlistBuddy -c 'Print :CFBundleIdentifier' "${APP}/Info.plist")" == "com.signal.app" ]]
           [[ "$(/usr/libexec/PlistBuddy -c 'Print :CFBundleIdentifier' "${EXTENSION}/Info.plist")" == "com.signal.app.broadcast" ]]
           [[ "$(/usr/libexec/PlistBuddy -c 'Print :NSExtension:NSExtensionPointIdentifier' "${EXTENSION}/Info.plist")" == "com.apple.broadcast-services-upload" ]]
-          lipo -verify_arch arm64 "${APP}/SIGNAL"
-          lipo -verify_arch arm64 "${EXTENSION}/SIGNALBroadcastExtension"
+          lipo "${APP}/SIGNAL" -verify_arch arm64
+          lipo "${EXTENSION}/SIGNALBroadcastExtension" -verify_arch arm64
           ! codesign -d "${APP}" >/dev/null 2>&1
           ! codesign -d "${EXTENSION}" >/dev/null 2>&1
           cmp ios/SIGNALApp/SIGNALApp.entitlements \
