@@ -1,0 +1,122 @@
+name: Build unsigned SIGNAL archive
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  archive:
+    name: Archive SIGNAL without signing
+    runs-on: macos-26
+    timeout-minutes: 45
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_26.3.app/Contents/Developer
+      PROJECT: ios/SIGNAL.xcodeproj
+      SCHEME: SIGNAL
+      PACKAGE_RESOLVED: ios/SIGNAL.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved
+      ARCHIVE_PATH: ${{ github.workspace }}/artifacts/SIGNAL.xcarchive
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Verify Xcode and package lock
+        run: |
+          set -euo pipefail
+          test -d "${DEVELOPER_DIR}"
+          test -f "${PACKAGE_RESOLVED}"
+          xcodebuild -version
+          xcrun --sdk iphoneos --show-sdk-version
+
+      - name: Validate entitlement declarations
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import plistlib
+
+          paths = (
+              "ios/SIGNALApp/SIGNALApp.entitlements",
+              "ios/SIGNALBroadcastExtension/SIGNALBroadcastExtension.entitlements",
+          )
+          for path in paths:
+              with open(path, "rb") as stream:
+                  entitlements = plistlib.load(stream)
+              assert entitlements["com.apple.security.application-groups"] == [
+                  "group.com.signal.broadcast"
+              ]
+              assert entitlements["keychain-access-groups"] == [
+                  "$(AppIdentifierPrefix)com.signal.broadcast.shared"
+              ]
+          PY
+
+      - name: Resolve committed Swift packages
+        run: |
+          set -euo pipefail
+          xcodebuild -resolvePackageDependencies \
+            -project "${PROJECT}" \
+            -scheme "${SCHEME}" \
+            -clonedSourcePackagesDirPath "${RUNNER_TEMP}/SourcePackages" \
+            -onlyUsePackageVersionsFromResolvedFile
+
+      - name: Archive app and Broadcast Upload Extension
+        run: |
+          set -euo pipefail
+          mkdir -p "$(dirname "${ARCHIVE_PATH}")"
+          xcodebuild archive \
+            -project "${PROJECT}" \
+            -scheme "${SCHEME}" \
+            -configuration Release \
+            -destination 'generic/platform=iOS' \
+            -archivePath "${ARCHIVE_PATH}" \
+            -clonedSourcePackagesDirPath "${RUNNER_TEMP}/SourcePackages" \
+            -onlyUsePackageVersionsFromResolvedFile \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO
+
+      - name: Preserve signing metadata
+        run: |
+          set -euo pipefail
+          SIGNING_METADATA="${ARCHIVE_PATH}/SigningMetadata"
+          mkdir -p "${SIGNING_METADATA}"
+          cp ios/SIGNALApp/SIGNALApp.entitlements \
+            "${SIGNING_METADATA}/SIGNALApp.entitlements"
+          cp ios/SIGNALBroadcastExtension/SIGNALBroadcastExtension.entitlements \
+            "${SIGNING_METADATA}/SIGNALBroadcastExtension.entitlements"
+
+      - name: Validate unsigned archive
+        run: |
+          set -euo pipefail
+          APP="${ARCHIVE_PATH}/Products/Applications/SIGNAL.app"
+          EXTENSION="${APP}/PlugIns/SIGNALBroadcastExtension.appex"
+
+          test -x "${APP}/SIGNAL"
+          test -d "${APP}/PlugIns"
+          test -x "${EXTENSION}/SIGNALBroadcastExtension"
+          [[ "$(/usr/libexec/PlistBuddy -c 'Print :CFBundleIdentifier' "${APP}/Info.plist")" == "com.signal.app" ]]
+          [[ "$(/usr/libexec/PlistBuddy -c 'Print :CFBundleIdentifier' "${EXTENSION}/Info.plist")" == "com.signal.app.broadcast" ]]
+          [[ "$(/usr/libexec/PlistBuddy -c 'Print :NSExtension:NSExtensionPointIdentifier' "${EXTENSION}/Info.plist")" == "com.apple.broadcast-services-upload" ]]
+          lipo -verify_arch arm64 "${APP}/SIGNAL"
+          lipo -verify_arch arm64 "${EXTENSION}/SIGNALBroadcastExtension"
+          ! codesign -d "${APP}" >/dev/null 2>&1
+          ! codesign -d "${EXTENSION}" >/dev/null 2>&1
+          cmp ios/SIGNALApp/SIGNALApp.entitlements \
+            "${ARCHIVE_PATH}/SigningMetadata/SIGNALApp.entitlements"
+          cmp ios/SIGNALBroadcastExtension/SIGNALBroadcastExtension.entitlements \
+            "${ARCHIVE_PATH}/SigningMetadata/SIGNALBroadcastExtension.entitlements"
+
+      - name: Package Xcode archive
+        run: |
+          set -euo pipefail
+          ditto -c -k --sequesterRsrc --keepParent \
+            "${ARCHIVE_PATH}" \
+            "${ARCHIVE_PATH}.zip"
+
+      - name: Upload unsigned Xcode archive
+        uses: actions/upload-artifact@v4
+        with:
+          name: SIGNAL-unsigned-xcarchive
+          path: artifacts/SIGNAL.xcarchive.zip
+          if-no-files-found: error
+          retention-days: 14
