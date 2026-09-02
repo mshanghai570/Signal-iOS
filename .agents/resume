@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# This project has no services or authentication sessions to restore.
+echo "[orb resume] Ready"

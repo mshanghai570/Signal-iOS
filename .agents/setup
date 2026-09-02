@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+started_at=$SECONDS
+echo "[orb setup] Preparing Bun toolchain"
+
+if ! command -v bun >/dev/null 2>&1; then
+  curl -fsSL https://bun.sh/install | bash
+  export BUN_INSTALL="${BUN_INSTALL:-$HOME/.bun}"
+  export PATH="$BUN_INSTALL/bin:$PATH"
+fi
+
+echo "[orb setup] Installing dependencies from bun.lock"
+bun install --frozen-lockfile
+
+echo "[orb setup] Complete in $((SECONDS - started_at))s"
