@@ -33,6 +33,8 @@ struct VideoCapabilityResolver {
     }
 
     private static func supportsHardwareH264(width: Int, height: Int) -> Bool {
+        guard #available(iOS 17.4, *) else { return false }
+
         let encoderSpecification: [CFString: Any] = [
             kVTVideoEncoderSpecification_RequireHardwareAcceleratedVideoEncoder: true,
         ]
