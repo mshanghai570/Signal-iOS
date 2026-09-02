@@ -1,0 +1,126 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		100000000000000000000001 /* SIGNALApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200000000000000000000001 /* SIGNALApp.swift */; };
+		100000000000000000000002 /* BroadcastSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200000000000000000000002 /* BroadcastSetupView.swift */; };
+		100000000000000000000003 /* BroadcastPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200000000000000000000003 /* BroadcastPickerView.swift */; };
+		100000000000000000000004 /* BroadcastSessionConfiguration.swift in App Sources */ = {isa = PBXBuildFile; fileRef = 200000000000000000000010 /* BroadcastSessionConfiguration.swift */; };
+		100000000000000000000005 /* AppGroupConfigurationStore.swift in App Sources */ = {isa = PBXBuildFile; fileRef = 200000000000000000000011 /* AppGroupConfigurationStore.swift */; };
+		100000000000000000000006 /* SharedStreamKeyStore.swift in App Sources */ = {isa = PBXBuildFile; fileRef = 200000000000000000000012 /* SharedStreamKeyStore.swift */; };
+		100000000000000000000010 /* SampleHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200000000000000000000020 /* SampleHandler.swift */; };
+		100000000000000000000011 /* ReplayKitFrameNormalizer.swift in Extension Sources */ = {isa = PBXBuildFile; fileRef = 200000000000000000000021 /* ReplayKitFrameNormalizer.swift */; };
+		100000000000000000000012 /* VideoCapabilityResolver.swift in Extension Sources */ = {isa = PBXBuildFile; fileRef = 200000000000000000000022 /* VideoCapabilityResolver.swift */; };
+		100000000000000000000013 /* YouTubeBroadcastSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200000000000000000000023 /* YouTubeBroadcastSession.swift */; };
+		100000000000000000000014 /* BroadcastSessionConfiguration.swift in Extension Sources */ = {isa = PBXBuildFile; fileRef = 200000000000000000000010 /* BroadcastSessionConfiguration.swift */; };
+		100000000000000000000015 /* AppGroupConfigurationStore.swift in Extension Sources */ = {isa = PBXBuildFile; fileRef = 200000000000000000000011 /* AppGroupConfigurationStore.swift */; };
+		100000000000000000000016 /* SharedStreamKeyStore.swift in Extension Sources */ = {isa = PBXBuildFile; fileRef = 200000000000000000000012 /* SharedStreamKeyStore.swift */; };
+		100000000000000000000017 /* HaishinKit in Frameworks */ = {isa = PBXBuildFile; productRef = 900000000000000000000002 /* HaishinKit */; };
+		100000000000000000000018 /* RTMPHaishinKit in Frameworks */ = {isa = PBXBuildFile; productRef = 900000000000000000000003 /* RTMPHaishinKit */; };
+		100000000000000000000020 /* BroadcastSessionConfigurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200000000000000000000030 /* BroadcastSessionConfigurationTests.swift */; };
+		100000000000000000000021 /* ReplayKitFrameNormalizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200000000000000000000031 /* ReplayKitFrameNormalizerTests.swift */; };
+		100000000000000000000022 /* BroadcastSessionConfiguration.swift in Test Sources */ = {isa = PBXBuildFile; fileRef = 200000000000000000000010 /* BroadcastSessionConfiguration.swift */; };
+		100000000000000000000023 /* ReplayKitFrameNormalizer.swift in Test Sources */ = {isa = PBXBuildFile; fileRef = 200000000000000000000021 /* ReplayKitFrameNormalizer.swift */; };
+		100000000000000000000030 /* SIGNALBroadcastExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 200000000000000000000041 /* SIGNALBroadcastExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		300000000000000000000001 /* PBXContainerItemProxy */ = {isa = PBXContainerItemProxy; containerPortal = 700000000000000000000001 /* Project object */; proxyType = 1; remoteGlobalIDString = 600000000000000000000002; remoteInfo = SIGNALBroadcastExtension; };
+		300000000000000000000002 /* PBXContainerItemProxy */ = {isa = PBXContainerItemProxy; containerPortal = 700000000000000000000001 /* Project object */; proxyType = 1; remoteGlobalIDString = 600000000000000000000001; remoteInfo = SIGNAL; };
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		400000000000000000000001 /* Embed App Extensions */ = {isa = PBXCopyFilesBuildPhase; buildActionMask = 2147483647; dstPath = ""; dstSubfolderSpec = 13; files = (100000000000000000000030 /* SIGNALBroadcastExtension.appex in Embed App Extensions */, ); name = "Embed App Extensions"; runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		200000000000000000000001 /* SIGNALApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SIGNALApp.swift; sourceTree = "<group>"; };
+		200000000000000000000002 /* BroadcastSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BroadcastSetupView.swift; sourceTree = "<group>"; };
+		200000000000000000000003 /* BroadcastPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BroadcastPickerView.swift; sourceTree = "<group>"; };
+		200000000000000000000004 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		200000000000000000000005 /* SIGNALApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SIGNALApp.entitlements; sourceTree = "<group>"; };
+		200000000000000000000010 /* BroadcastSessionConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BroadcastSessionConfiguration.swift; sourceTree = "<group>"; };
+		200000000000000000000011 /* AppGroupConfigurationStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGroupConfigurationStore.swift; sourceTree = "<group>"; };
+		200000000000000000000012 /* SharedStreamKeyStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedStreamKeyStore.swift; sourceTree = "<group>"; };
+		200000000000000000000020 /* SampleHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleHandler.swift; sourceTree = "<group>"; };
+		200000000000000000000021 /* ReplayKitFrameNormalizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplayKitFrameNormalizer.swift; sourceTree = "<group>"; };
+		200000000000000000000022 /* VideoCapabilityResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCapabilityResolver.swift; sourceTree = "<group>"; };
+		200000000000000000000023 /* YouTubeBroadcastSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTubeBroadcastSession.swift; sourceTree = "<group>"; };
+		200000000000000000000024 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		200000000000000000000025 /* SIGNALBroadcastExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SIGNALBroadcastExtension.entitlements; sourceTree = "<group>"; };
+		200000000000000000000030 /* BroadcastSessionConfigurationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BroadcastSessionConfigurationTests.swift; sourceTree = "<group>"; };
+		200000000000000000000031 /* ReplayKitFrameNormalizerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplayKitFrameNormalizerTests.swift; sourceTree = "<group>"; };
+		200000000000000000000040 /* SIGNAL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SIGNAL.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		200000000000000000000041 /* SIGNALBroadcastExtension.appex */ = {isa = PBXFileReference; explicitFileType = wrapper.app-extension; includeInIndex = 0; path = SIGNALBroadcastExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		200000000000000000000042 /* SIGNALTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SIGNALTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		410000000000000000000001 /* Frameworks */ = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+		410000000000000000000002 /* Frameworks */ = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (100000000000000000000017 /* HaishinKit in Frameworks */, 100000000000000000000018 /* RTMPHaishinKit in Frameworks */, ); runOnlyForDeploymentPostprocessing = 0; };
+		410000000000000000000003 /* Frameworks */ = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		500000000000000000000001 = {isa = PBXGroup; children = (500000000000000000000002 /* SIGNALApp */, 500000000000000000000003 /* Shared */, 500000000000000000000004 /* SIGNALBroadcastExtension */, 500000000000000000000005 /* SIGNALTests */, 500000000000000000000006 /* Products */, ); sourceTree = "<group>"; };
+		500000000000000000000002 /* SIGNALApp */ = {isa = PBXGroup; children = (200000000000000000000001, 200000000000000000000002, 200000000000000000000003, 200000000000000000000004, 200000000000000000000005, ); path = SIGNALApp; sourceTree = "<group>"; };
+		500000000000000000000003 /* Shared */ = {isa = PBXGroup; children = (200000000000000000000010, 200000000000000000000011, 200000000000000000000012, ); path = Shared; sourceTree = "<group>"; };
+		500000000000000000000004 /* SIGNALBroadcastExtension */ = {isa = PBXGroup; children = (200000000000000000000020, 200000000000000000000021, 200000000000000000000022, 200000000000000000000023, 200000000000000000000024, 200000000000000000000025, ); path = SIGNALBroadcastExtension; sourceTree = "<group>"; };
+		500000000000000000000005 /* SIGNALTests */ = {isa = PBXGroup; children = (200000000000000000000030, 200000000000000000000031, ); path = SIGNALTests; sourceTree = "<group>"; };
+		500000000000000000000006 /* Products */ = {isa = PBXGroup; children = (200000000000000000000040, 200000000000000000000041, 200000000000000000000042, ); name = Products; sourceTree = "<group>"; };
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		600000000000000000000001 /* SIGNAL */ = {isa = PBXNativeTarget; buildConfigurationList = 800000000000000000000002; buildPhases = (420000000000000000000001, 410000000000000000000001, 400000000000000000000001, ); buildRules = (); dependencies = (A00000000000000000000001, ); name = SIGNAL; packageProductDependencies = (); productName = SIGNAL; productReference = 200000000000000000000040; productType = "com.apple.product-type.application"; };
+		600000000000000000000002 /* SIGNALBroadcastExtension */ = {isa = PBXNativeTarget; buildConfigurationList = 800000000000000000000003; buildPhases = (420000000000000000000002, 410000000000000000000002, ); buildRules = (); dependencies = (); name = SIGNALBroadcastExtension; packageProductDependencies = (900000000000000000000002, 900000000000000000000003, ); productName = SIGNALBroadcastExtension; productReference = 200000000000000000000041; productType = "com.apple.product-type.app-extension"; };
+		600000000000000000000003 /* SIGNALTests */ = {isa = PBXNativeTarget; buildConfigurationList = 800000000000000000000004; buildPhases = (420000000000000000000003, 410000000000000000000003, ); buildRules = (); dependencies = (A00000000000000000000002, ); name = SIGNALTests; packageProductDependencies = (); productName = SIGNALTests; productReference = 200000000000000000000042; productType = "com.apple.product-type.bundle.unit-test"; };
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		700000000000000000000001 /* Project object */ = {isa = PBXProject; attributes = {BuildIndependentTargetsInParallel = YES; LastSwiftUpdateCheck = 1600; LastUpgradeCheck = 1600; TargetAttributes = {600000000000000000000001 = {CreatedOnToolsVersion = 16.0; }; 600000000000000000000002 = {CreatedOnToolsVersion = 16.0; }; 600000000000000000000003 = {CreatedOnToolsVersion = 16.0; TestTargetID = 600000000000000000000001; }; }; }; buildConfigurationList = 800000000000000000000001; compatibilityVersion = "Xcode 14.0"; developmentRegion = en; hasScannedForEncodings = 0; knownRegions = (en, Base, ); mainGroup = 500000000000000000000001; packageReferences = (900000000000000000000001 /* XCRemoteSwiftPackageReference "HaishinKit.swift" */, ); productRefGroup = 500000000000000000000006; projectDirPath = ""; projectRoot = ""; targets = (600000000000000000000001, 600000000000000000000002, 600000000000000000000003, ); };
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		420000000000000000000001 /* Sources */ = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (100000000000000000000001, 100000000000000000000002, 100000000000000000000003, 100000000000000000000004, 100000000000000000000005, 100000000000000000000006, ); runOnlyForDeploymentPostprocessing = 0; };
+		420000000000000000000002 /* Sources */ = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (100000000000000000000010, 100000000000000000000011, 100000000000000000000012, 100000000000000000000013, 100000000000000000000014, 100000000000000000000015, 100000000000000000000016, ); runOnlyForDeploymentPostprocessing = 0; };
+		420000000000000000000003 /* Sources */ = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (100000000000000000000020, 100000000000000000000021, 100000000000000000000022, 100000000000000000000023, ); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A00000000000000000000001 /* PBXTargetDependency */ = {isa = PBXTargetDependency; target = 600000000000000000000002 /* SIGNALBroadcastExtension */; targetProxy = 300000000000000000000001 /* PBXContainerItemProxy */; };
+		A00000000000000000000002 /* PBXTargetDependency */ = {isa = PBXTargetDependency; target = 600000000000000000000001 /* SIGNAL */; targetProxy = 300000000000000000000002 /* PBXContainerItemProxy */; };
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		B00000000000000000000001 /* Debug */ = {isa = XCBuildConfiguration; buildSettings = {ALWAYS_SEARCH_USER_PATHS = NO; CLANG_ENABLE_MODULES = YES; COPY_PHASE_STRIP = NO; DEBUG_INFORMATION_FORMAT = dwarf; ENABLE_TESTABILITY = YES; GCC_C_LANGUAGE_STANDARD = gnu17; IPHONEOS_DEPLOYMENT_TARGET = 15.0; ONLY_ACTIVE_ARCH = YES; SDKROOT = iphoneos; SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG; SWIFT_OPTIMIZATION_LEVEL = "-Onone"; SWIFT_VERSION = 5.0; }; name = Debug; };
+		B00000000000000000000002 /* Release */ = {isa = XCBuildConfiguration; buildSettings = {ALWAYS_SEARCH_USER_PATHS = NO; CLANG_ENABLE_MODULES = YES; COPY_PHASE_STRIP = YES; DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym"; ENABLE_NS_ASSERTIONS = NO; GCC_C_LANGUAGE_STANDARD = gnu17; IPHONEOS_DEPLOYMENT_TARGET = 15.0; SDKROOT = iphoneos; SWIFT_COMPILATION_MODE = wholemodule; SWIFT_OPTIMIZATION_LEVEL = "-O"; SWIFT_VERSION = 5.0; VALIDATE_PRODUCT = YES; }; name = Release; };
+		B00000000000000000000003 /* Debug */ = {isa = XCBuildConfiguration; buildSettings = {CODE_SIGN_ENTITLEMENTS = SIGNALApp/SIGNALApp.entitlements; CODE_SIGN_STYLE = Automatic; CURRENT_PROJECT_VERSION = 1; GENERATE_INFOPLIST_FILE = NO; INFOPLIST_FILE = SIGNALApp/Info.plist; LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks"; MARKETING_VERSION = 1.0; PRODUCT_BUNDLE_IDENTIFIER = com.signal.app; PRODUCT_NAME = "$(TARGET_NAME)"; SUPPORTED_PLATFORMS = "iphoneos iphonesimulator"; SUPPORTS_MACCATALYST = NO; SWIFT_EMIT_LOC_STRINGS = YES; TARGETED_DEVICE_FAMILY = "1,2"; }; name = Debug; };
+		B00000000000000000000004 /* Release */ = {isa = XCBuildConfiguration; buildSettings = {CODE_SIGN_ENTITLEMENTS = SIGNALApp/SIGNALApp.entitlements; CODE_SIGN_STYLE = Automatic; CURRENT_PROJECT_VERSION = 1; GENERATE_INFOPLIST_FILE = NO; INFOPLIST_FILE = SIGNALApp/Info.plist; LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks"; MARKETING_VERSION = 1.0; PRODUCT_BUNDLE_IDENTIFIER = com.signal.app; PRODUCT_NAME = "$(TARGET_NAME)"; SUPPORTED_PLATFORMS = "iphoneos iphonesimulator"; SUPPORTS_MACCATALYST = NO; SWIFT_EMIT_LOC_STRINGS = YES; TARGETED_DEVICE_FAMILY = "1,2"; }; name = Release; };
+		B00000000000000000000005 /* Debug */ = {isa = XCBuildConfiguration; buildSettings = {APPLICATION_EXTENSION_API_ONLY = YES; CODE_SIGN_ENTITLEMENTS = SIGNALBroadcastExtension/SIGNALBroadcastExtension.entitlements; CODE_SIGN_STYLE = Automatic; CURRENT_PROJECT_VERSION = 1; GENERATE_INFOPLIST_FILE = NO; INFOPLIST_FILE = SIGNALBroadcastExtension/Info.plist; LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks"; MARKETING_VERSION = 1.0; PRODUCT_BUNDLE_IDENTIFIER = com.signal.app.broadcast; PRODUCT_NAME = "$(TARGET_NAME)"; SKIP_INSTALL = YES; SUPPORTED_PLATFORMS = "iphoneos iphonesimulator"; SUPPORTS_MACCATALYST = NO; SWIFT_EMIT_LOC_STRINGS = YES; TARGETED_DEVICE_FAMILY = "1,2"; }; name = Debug; };
+		B00000000000000000000006 /* Release */ = {isa = XCBuildConfiguration; buildSettings = {APPLICATION_EXTENSION_API_ONLY = YES; CODE_SIGN_ENTITLEMENTS = SIGNALBroadcastExtension/SIGNALBroadcastExtension.entitlements; CODE_SIGN_STYLE = Automatic; CURRENT_PROJECT_VERSION = 1; GENERATE_INFOPLIST_FILE = NO; INFOPLIST_FILE = SIGNALBroadcastExtension/Info.plist; LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks"; MARKETING_VERSION = 1.0; PRODUCT_BUNDLE_IDENTIFIER = com.signal.app.broadcast; PRODUCT_NAME = "$(TARGET_NAME)"; SKIP_INSTALL = YES; SUPPORTED_PLATFORMS = "iphoneos iphonesimulator"; SUPPORTS_MACCATALYST = NO; SWIFT_EMIT_LOC_STRINGS = YES; TARGETED_DEVICE_FAMILY = "1,2"; }; name = Release; };
+		B00000000000000000000007 /* Debug */ = {isa = XCBuildConfiguration; buildSettings = {BUNDLE_LOADER = "$(TEST_HOST)"; CODE_SIGN_STYLE = Automatic; GENERATE_INFOPLIST_FILE = YES; PRODUCT_BUNDLE_IDENTIFIER = com.signal.app.tests; PRODUCT_NAME = "$(TARGET_NAME)"; SUPPORTED_PLATFORMS = "iphonesimulator iphoneos"; SWIFT_EMIT_LOC_STRINGS = NO; TARGETED_DEVICE_FAMILY = "1,2"; TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SIGNAL.app/SIGNAL"; }; name = Debug; };
+		B00000000000000000000008 /* Release */ = {isa = XCBuildConfiguration; buildSettings = {BUNDLE_LOADER = "$(TEST_HOST)"; CODE_SIGN_STYLE = Automatic; GENERATE_INFOPLIST_FILE = YES; PRODUCT_BUNDLE_IDENTIFIER = com.signal.app.tests; PRODUCT_NAME = "$(TARGET_NAME)"; SUPPORTED_PLATFORMS = "iphonesimulator iphoneos"; SWIFT_EMIT_LOC_STRINGS = NO; TARGETED_DEVICE_FAMILY = "1,2"; TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SIGNAL.app/SIGNAL"; }; name = Release; };
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		800000000000000000000001 /* Build configuration list for PBXProject "SIGNAL" */ = {isa = XCConfigurationList; buildConfigurations = (B00000000000000000000001, B00000000000000000000002, ); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		800000000000000000000002 /* Build configuration list for PBXNativeTarget "SIGNAL" */ = {isa = XCConfigurationList; buildConfigurations = (B00000000000000000000003, B00000000000000000000004, ); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		800000000000000000000003 /* Build configuration list for PBXNativeTarget "SIGNALBroadcastExtension" */ = {isa = XCConfigurationList; buildConfigurations = (B00000000000000000000005, B00000000000000000000006, ); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		800000000000000000000004 /* Build configuration list for PBXNativeTarget "SIGNALTests" */ = {isa = XCConfigurationList; buildConfigurations = (B00000000000000000000007, B00000000000000000000008, ); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		900000000000000000000001 /* XCRemoteSwiftPackageReference "HaishinKit.swift" */ = {isa = XCRemoteSwiftPackageReference; repositoryURL = "https://github.com/HaishinKit/HaishinKit.swift"; requirement = {kind = exactVersion; version = 2.2.5; }; };
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		900000000000000000000002 /* HaishinKit */ = {isa = XCSwiftPackageProductDependency; package = 900000000000000000000001 /* XCRemoteSwiftPackageReference "HaishinKit.swift" */; productName = HaishinKit; };
+		900000000000000000000003 /* RTMPHaishinKit */ = {isa = XCSwiftPackageProductDependency; package = 900000000000000000000001 /* XCRemoteSwiftPackageReference "HaishinKit.swift" */; productName = RTMPHaishinKit; };
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 700000000000000000000001 /* Project object */;
+}
