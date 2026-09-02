@@ -1,0 +1,6 @@
+{
+  "name": "SIGNAL",
+  "description": "Professional iOS screen-transmission and YouTube live streaming application with uncropped landscape orientation preservation for iOS 15.0–16.6.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
